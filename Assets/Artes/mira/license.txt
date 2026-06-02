@@ -1,0 +1,11 @@
+Model Information:
+* title:	Machine Gun Muzzle Flash Test effect
+* source:	https://sketchfab.com/3d-models/machine-gun-muzzle-flash-test-effect-b96c7578853a4fa98c7893aa8f777636
+* author:	maxi.ariani (https://sketchfab.com/maxi.ariani)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Machine Gun Muzzle Flash Test effect" (https://sketchfab.com/3d-models/machine-gun-muzzle-flash-test-effect-b96c7578853a4fa98c7893aa8f777636) by maxi.ariani (https://sketchfab.com/maxi.ariani) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
