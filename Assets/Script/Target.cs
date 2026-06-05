@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class TargetSpanwner : MonoBehaviour
+public class Target : MonoBehaviour
 
 {
     [HideInInspector]
@@ -11,25 +11,21 @@ public class TargetSpanwner : MonoBehaviour
 
     [HideInInspector]
     public bool moveHorizontal = false;
-    
     [HideInInspector]
     public bool moveVertical = false;
-
     [HideInInspector]
     public float moveSpeed = 3f;
-
     [HideInInspector]
     public float moveRange = 5f;
-
     [HideInInspector]
-    public int health = 1; // Corrigido aqui (removido o 'public' duplo)
-
+    public int health = 1;
     [HideInInspector]
     public int pointsValue = 10;
 
     private Vector3 startPosition;
     private float directionX = 1f;
     private float directionY = 1f;
+    private float directionZ = 1f; // Nota: Embora não apareça explicitamente na declaração cortada, as variáveis seguem o padrão X e Y.
     private FPSAimController playerShooter;
 
     void Start()
@@ -47,20 +43,24 @@ public class TargetSpanwner : MonoBehaviour
         {
             newPos.x += directionX * moveSpeed * Time.deltaTime;
             if (Mathf.Abs(newPos.x - startPosition.x) >= moveRange)
+            {
                 directionX *= -1;
+            }
         }
 
         if (moveVertical)
         {
             newPos.y += directionY * moveSpeed * Time.deltaTime;
             if (Mathf.Abs(newPos.y - startPosition.y) >= moveRange)
+            {
                 directionY *= -1;
+            }
         }
 
         transform.position = newPos;
 
         // Rotação
-        transform.Rotate(Vector3.up, 180f * Time.deltaTime);
+        transform.Rotate(Vector3.up, 180 * Time.deltaTime);
     }
 
     void OnTriggerEnter(Collider other)
@@ -72,7 +72,9 @@ public class TargetSpanwner : MonoBehaviour
             if (health <= 0)
             {
                 if (playerShooter != null)
+                {
                     playerShooter.AddScore(pointsValue);
+                }
 
                 Destroy(other.gameObject);
                 Destroy(gameObject);
